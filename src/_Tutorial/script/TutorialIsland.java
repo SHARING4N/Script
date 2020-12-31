@@ -46,8 +46,6 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
                 Condition.sleep(100);
             }
         }).start();
-
-        Condition.wait(() -> ctx.game.loggedIn() && ctx.players.local().valid(), 5000, 1000);
     }
 
     @Override
