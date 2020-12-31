@@ -61,7 +61,7 @@ public final class SurvivalSection extends RSUtil {
         if (HasMessage("Firemaking")) {
             Tile tile = getEmptyTile();
             tile.matrix(ctx).interact("Walk here");
-            Condition.sleep(5000);
+            Condition.wait(() -> ctx.players.local().tile().distanceTo(tile) <= 1,1000, 5);
             ctx.inventory.select().name("Tinderbox").peek().interact("Use");
             ctx.inventory.select().name("Logs").peek().interact("Use");
             return;

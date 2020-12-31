@@ -60,7 +60,7 @@ public class RSUtil extends TutorialIsland {
         while (a < 10) {
             a++;
             npc.interact("Talk-to");
-            success = Condition.wait(() -> ctx.players.local().interacting().equals(npc),50, 5*20);
+            success = Condition.wait(() -> npc.interacting().equals(ctx.players.local()),50, 20*20);
             if (success) a = 10;
         }
         ctx.camera.angle(0);

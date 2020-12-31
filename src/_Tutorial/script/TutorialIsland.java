@@ -101,7 +101,7 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
                 new WizardSection().Exec();
                 break;
         }
-        Condition.sleep(5000);
+        Condition.sleep(1000);
     }
 
     @Override

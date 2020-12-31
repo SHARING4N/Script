@@ -19,7 +19,6 @@ public final class MiningSection extends RSUtil {
             Tile tile = new Tile(3079, 9502, 0);
             if (ctx.players.local().tile().distanceTo(tile) <= 2) {
                 InteractNPC(instructor);
-                Condition.sleep(5000);
             } WalkToPos(tile);
             return;
         }
