@@ -99,7 +99,7 @@ public final class SurvivalSection extends RSUtil {
             }
             if (canFire) return tile;
         }
-        Condition.sleep(30000);
+        Condition.sleep(1000);
         return getEmptyTile();
     }
 
