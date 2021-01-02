@@ -13,9 +13,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public final class SurvivalSection extends RSUtil {
+public final class SurvivalArea extends RSUtil {
 
-    public SurvivalSection() {
+    public SurvivalArea() {
         instructor = ctx.npcs.select().name("Survival Expert").peek();
     }
 

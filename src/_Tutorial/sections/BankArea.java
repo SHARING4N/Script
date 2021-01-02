@@ -6,9 +6,9 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.*;
 import z.T;
 
-public final class BankSection extends RSUtil {
+public final class BankArea extends RSUtil {
 
-    public BankSection() {
+    public BankArea() {
         instructor = ctx.npcs.select().name("Account Guide").peek();
     }
 

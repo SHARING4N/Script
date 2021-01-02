@@ -9,9 +9,9 @@ import z.T;
 
 import java.util.Arrays;
 
-public final class FightingSection extends RSUtil {
+public final class FightingArea extends RSUtil {
 
-    public FightingSection() {
+    public FightingArea() {
         instructor = ctx.npcs.select().name("Combat Instructor").peek();
     }
 

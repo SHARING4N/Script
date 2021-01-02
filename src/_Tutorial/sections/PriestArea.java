@@ -6,9 +6,9 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.*;
 import z.T;
 
-public final class PriestSection extends RSUtil {
+public final class PriestArea extends RSUtil {
 
-    public PriestSection() {
+    public PriestArea() {
         instructor = ctx.npcs.select().name("Brother Brace").peek();
     }
 

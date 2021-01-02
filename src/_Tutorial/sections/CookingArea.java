@@ -6,9 +6,9 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.*;
 import z.T;
 
-public final class CookingSection extends RSUtil {
+public final class CookingArea extends RSUtil {
 
-    public CookingSection() {
+    public CookingArea() {
         instructor = ctx.npcs.select().name("Master Chef").peek();
     }
 

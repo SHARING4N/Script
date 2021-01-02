@@ -9,10 +9,10 @@ import org.powerbot.script.rt4.Npc;
 
 import java.util.Random;
 
-public final class RuneScapeGuideSection extends RSUtil {
+public final class RuneScapeGuideArea extends RSUtil {
 
 
-    public RuneScapeGuideSection() {
+    public RuneScapeGuideArea() {
         instructor = ctx.npcs.select().name("Gielinor Guide").peek();
     }
 

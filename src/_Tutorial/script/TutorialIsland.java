@@ -3,13 +3,10 @@ package _Tutorial.script;
 
 import _Tutorial.sections.*;
 import org.powerbot.script.*;
-import org.powerbot.script.rt4.*;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Component;
 
 import java.awt.*;
-import java.util.List;
-import java.util.concurrent.CompletionService;
 
 @org.powerbot.script.Script.Manifest(
         name = "Tutorial",
@@ -30,7 +27,7 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
     }
 
 
-    private boolean isTutorialIslandCompleted() {
+    private boolean TutorialCompleted() {
         return getProgess() == -1;
     }
 
@@ -39,7 +36,7 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
         System.out.println("Script Started!");
 
         new Thread(() -> {
-            while (!isTutorialIslandCompleted()) {
+            while (!TutorialCompleted()) {
                 try {
                     ctx.input.send("{VK_SPACE}");
                 } catch (Exception ignore) {}
@@ -51,7 +48,7 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
     @Override
     public void poll() {
 
-        if (isTutorialIslandCompleted()) {
+        if (TutorialCompleted()) {
             ctx.game.logout();
             if (ctx.game.loginState() == 0) ctx.controller.stop();
             return;
@@ -63,42 +60,42 @@ public class TutorialIsland extends PollingScript<ClientContext>  implements Pai
 
         switch (getProgess()) {
             case 0:
-                new RuneScapeGuideSection().Exec();
+                new RuneScapeGuideArea().Exec();
                 break;
             case 31:
             case 47:
-                new SurvivalSection().Exec();
+                new SurvivalArea().Exec();
                 break;
             case 63:
             case 80:
-                new CookingSection().Exec();
+                new CookingArea().Exec();
                 break;
             case 95:
-                new PathToQuestSection().Exec();
+                new PathToQuestArea().Exec();
                 break;
             case 111:
-                new QuestSection().Exec();
+                new QuestArea().Exec();
                 break;
             case 127:
             case 143:
-                new MiningSection().Exec();
+                new MiningArea().Exec();
                 break;
             case 160:
             case 175:
             case 191:
-                new FightingSection().Exec();
+                new FightingArea().Exec();
                 break;
             case 223:
             case 240:
-                new BankSection().Exec();
+                new BankArea().Exec();
                 break;
             case 255:
             case 271:
-                new PriestSection().Exec();
+                new PriestArea().Exec();
                 break;
             case 287:
             case 320:
-                new WizardSection().Exec();
+                new WizardArea().Exec();
                 break;
         }
         Condition.sleep(1000);

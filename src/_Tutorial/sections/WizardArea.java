@@ -6,9 +6,9 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.*;
 import z.T;
 
-public final class WizardSection extends RSUtil {
+public final class WizardArea extends RSUtil {
 
-    public WizardSection() { instructor = ctx.npcs.select().name("Magic Instructor").peek();  }
+    public WizardArea() { instructor = ctx.npcs.select().name("Magic Instructor").peek();  }
 
     public void Exec() {
 

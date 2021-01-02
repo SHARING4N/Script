@@ -6,9 +6,9 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.*;
 import z.T;
 
-public final class QuestSection extends RSUtil {
+public final class QuestArea extends RSUtil {
 
-    public QuestSection() {
+    public QuestArea() {
         instructor = ctx.npcs.select().name("Quest Guide").peek();
     }
 

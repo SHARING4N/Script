@@ -7,9 +7,9 @@ import org.powerbot.script.rt4.Component;
 import org.powerbot.script.rt4.Npc;
 import z.T;
 
-public final class MiningSection extends RSUtil {
+public final class MiningArea extends RSUtil {
 
-    public MiningSection() {
+    public MiningArea() {
         instructor = ctx.npcs.select().name("Mining Instructor").peek();
     }
 
