@@ -9,8 +9,8 @@ import org.powerbot.script.rt4.Component;
 import java.awt.*;
 
 @org.powerbot.script.Script.Manifest(
-        name = "Tutorial",
-        description = "",
+        name = "Tutorial Island",
+        description = "by SHARINGAN",
         version = "1.0.0"
 )
 
