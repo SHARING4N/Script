@@ -83,11 +83,6 @@ public class RSUtil extends TutorialIsland {
         }
     }
 
-    public boolean IsOnScreen(Point p) {
-        Dimension game2D = ctx.game.dimensions();
-        return (p.getX() <= game2D.getWidth() && p.getY() <= game2D.getHeight());
-    }
-
     public boolean HasMessage(String str) {
         Components comps = ctx.components.textContains(str);
         if (comps.size() == 1) {
@@ -102,6 +97,7 @@ public class RSUtil extends TutorialIsland {
         return false;
     }
 
+    // Used because webwalkingservice is alot of errors
     public boolean WalkToPos(Tile finalPos) {
         List<Tile> tiles = new ArrayList<>();
         Tile oldTile = ctx.movement.findPath(finalPos).start().tile();
@@ -116,7 +112,13 @@ public class RSUtil extends TutorialIsland {
 
         success = true;
         for (Tile t : tiles) {
-            if (t.matrix(ctx).valid() && t.matrix(ctx).reachable() && ctx.players.local().tile().distanceTo(t) > 2 && ctx.movement.closestOnMap(t).equals(t)) {
+            if (t.matrix(ctx).valid() && t.matrix(ctx).reachable() && ctx.players.local().tile().distanceTo(t) > 2) {
+                if (!ctx.movement.closestOnMap(t).equals(t)) {
+                    Tile nT = ctx.movement.closestOnMap(t);
+                    ctx.movement.step(nT);
+                    Condition.wait(() -> ctx.players.local().tile().distanceTo(nT) <= 2,1000,15);
+                    return WalkToPos(finalPos);
+                }
                 ctx.movement.step(t);
                 Condition.wait(() -> ctx.players.local().tile().distanceTo(t) <= 2,1000,15);
                 success = true;
